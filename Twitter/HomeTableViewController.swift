@@ -24,7 +24,7 @@ class HomeTableViewController: UITableViewController {
     }
     
     @objc func loadTweets() {
-        
+        print("Loading...")
         numberOfTweet = 10
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["count": numberOfTweet]
@@ -47,7 +47,6 @@ class HomeTableViewController: UITableViewController {
     }
 
     
-    
     func loadMoreTweets() {
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         
@@ -66,7 +65,7 @@ class HomeTableViewController: UITableViewController {
             self.tableView.reloadData()
             
         }, failure: { (Error) in
-            print("Could not retreive tweets! oh no!!")
+            print("Could not retreive more tweets! oh no!!")
         })
         
     }
